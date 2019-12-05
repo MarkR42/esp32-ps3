@@ -65,6 +65,7 @@ bool Ps3Controller::begin(char *mac)
 bool Ps3Controller::end()
 {
     // TODO
+    return true;
 
 }
 
