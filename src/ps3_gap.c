@@ -159,6 +159,10 @@ static void ps3_gap_event_handle(UINT16 gap_handle, UINT16 event)
 
             if(was_connected != is_connected){
                 ps3_connect_event(is_connected);
+                if (! is_connected) {
+                    // Reinit our services so we can get another connection
+                    ps3_gap_init_services();
+                }
             }
 
             break;

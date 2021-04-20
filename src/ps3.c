@@ -264,6 +264,10 @@ void ps3_connect_event( uint8_t is_connected )
         ps3Enable();
     }else{
         is_active = false;
+        if(ps3_connection_cb != NULL)
+        {
+            ps3_connection_cb( is_active );
+        }
     }
 }
 
